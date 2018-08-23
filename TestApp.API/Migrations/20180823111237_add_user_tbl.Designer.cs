@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestApp.API.Data.Context;
 
 namespace TestApp.API.Migrations
 {
     [DbContext(typeof(TestAppDataContext))]
-    partial class TestAppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20180823111237_add_user_tbl")]
+    partial class add_user_tbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,21 +27,17 @@ namespace TestApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("EmailAddress")
-                        .HasMaxLength(50);
+                    b.Property<string>("EmailAddress");
 
-                    b.Property<string>("Firstname")
-                        .HasMaxLength(50);
+                    b.Property<string>("Firstname");
 
-                    b.Property<string>("Lastname")
-                        .HasMaxLength(50);
+                    b.Property<string>("Lastname");
 
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
 
-                    b.Property<string>("Username")
-                        .HasMaxLength(50);
+                    b.Property<string>("Username");
 
                     b.HasKey("Id");
 

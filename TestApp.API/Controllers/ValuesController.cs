@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestApp.API.Domain.Base;
 using TestApp.API.Models;
@@ -9,7 +10,7 @@ using TestApp.API.Models;
 namespace TestApp.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class ValuesController : ControllerBase
     {
         private IDataService service;

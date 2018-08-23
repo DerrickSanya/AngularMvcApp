@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestApp.API.Data.Context;
 
 namespace TestApp.API.Migrations
 {
     [DbContext(typeof(TestAppDataContext))]
-    partial class TestAppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20180823111855_updated_user_tbl")]
+    partial class updated_user_tbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

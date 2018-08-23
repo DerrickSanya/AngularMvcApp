@@ -12,5 +12,6 @@ namespace TestApp.API.Data.Context
         }
 
         public virtual DbSet<Value> Values {get;set;}
+        public virtual DbSet<User> Users {get;set;}
     }
 }
